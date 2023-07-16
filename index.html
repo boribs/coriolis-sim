@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #canvas2 {
+            border-left: 3px solid black;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .controls {
+            margin: 1rem;
+        }
+
+        label {
+            margin-right: 0.4rem;
+            margin-left: 0.4rem;
+        }
+
+        input {
+           margin-right: 0.4rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <canvas id="canvas1"></canvas>
+        <canvas id="canvas2"></canvas>
+    </div>
+    <div class="row controls">
+        <label>Velocidad:</label>
+        <!--
+            Barra de velocidad en la simulación
+            onchange: función a llamar cuando cambie el valor del input.
+         -->
+        <input id="input" type="range" min="-6.28" max="6.28" step="0.1" value="1.5" onchange="updateSpeed();">
+        <label id="val"></label>
+    </div>
+</body>
+<!--
+    Se incluye al final para tener la página cargada
+    antes de ejecutar el script.
+-->
+<script type="text/javascript" src="sim.js"></script>
+</html>
